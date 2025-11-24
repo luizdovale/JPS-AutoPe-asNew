@@ -1,12 +1,16 @@
-import { Product, Service, Testimonial } from './types';
+import { Product, CategoryHighlight, Testimonial } from './types';
 
 // Images curated to look like high-end realistic AI generations (Industrial/Diesel context)
 export const IMAGES = {
+  LOGO: "/logo.png", // Rota para a imagem da logo
   HERO_BG: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop", // Big Truck in garage
-  ABOUT_TEAM: "https://images.unsplash.com/photo-1504222490245-4815c9e610a0?q=80&w=2069&auto=format&fit=crop", // Mechanic working
-  SERVICE_MECHANIC: "https://images.unsplash.com/photo-1487754180477-ea9d60309c91?q=80&w=2000&auto=format&fit=crop", // Gears/Parts close up
-  SERVICE_OIL: "https://images.unsplash.com/photo-1486262715619-01b80258e0a5?q=80&w=2070&auto=format&fit=crop", // Mechanic pouring oil
-  SERVICE_DIAGNOSTIC: "https://images.unsplash.com/photo-1530046339160-7115b7e93b43?q=80&w=2000&auto=format&fit=crop", // Technology/Screen
+  ABOUT_TEAM: "https://images.unsplash.com/photo-1504222490245-4815c9e610a0?q=80&w=2069&auto=format&fit=crop", // Mechanic working (used as context for parts handling)
+  CAT_MECHANIC: "https://images.unsplash.com/photo-1487754180477-ea9d60309c91?q=80&w=2000&auto=format&fit=crop", // Gears/Parts close up
+  CAT_OIL: "https://images.unsplash.com/photo-1486262715619-01b80258e0a5?q=80&w=2070&auto=format&fit=crop", // Oil pouring
+  CAT_TECH: "https://images.unsplash.com/photo-1530046339160-7115b7e93b43?q=80&w=2000&auto=format&fit=crop", // Tech parts
+  CAT_UNDERCARRIAGE: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop", // Undercarriage parts
+  CAT_SHELVES: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=2000&auto=format&fit=crop", // Shelves/Parts
+  CAT_FLEET: "https://images.unsplash.com/photo-1596683769970-13d80630dc65?q=80&w=2000&auto=format&fit=crop", // Fleet/Trucks line
   PART_FILTER: "https://images.unsplash.com/photo-1626131481172-e61320d9385a?q=80&w=1000&auto=format&fit=crop", // Industrial Filter style
   PART_TURBO: "https://images.unsplash.com/photo-1569420959092-23c8d3506161?q=80&w=1000&auto=format&fit=crop", // Turbo/Metal
   PART_BRAKE: "https://images.unsplash.com/photo-1498887960847-2a5e46312788?q=80&w=1000&auto=format&fit=crop", // Disc brake
@@ -37,7 +41,7 @@ export const PRODUCTS: Product[] = [
     name: "Óleo Lubrificante 15W40 Top",
     category: "Óleos",
     description: "Lubrificação avançada para maior durabilidade do motor em condições extremas.",
-    imageUrl: IMAGES.SERVICE_OIL
+    imageUrl: IMAGES.CAT_OIL
   },
   {
     id: 3,
@@ -79,59 +83,81 @@ export const PRODUCTS: Product[] = [
     name: "Pastilha de Freio Heavy Duty",
     category: "Freios",
     description: "Material de atrito de alta resistência para frenagens bruscas e cargas pesadas.",
-    imageUrl: "https://images.unsplash.com/photo-1486262715619-01b80258e0a5?q=80&w=1000&auto=format&fit=crop"
+    imageUrl: IMAGES.CAT_OIL
   },
   {
     id: 9,
     name: "Alternador 24v Profissional",
     category: "Motores",
     description: "Geração de energia estável para todos os componentes elétricos do caminhão.",
-    imageUrl: "https://images.unsplash.com/photo-1487754180477-ea9d60309c91?q=80&w=1000&auto=format&fit=crop"
+    imageUrl: IMAGES.CAT_MECHANIC
   },
   {
     id: 10,
     name: "Fluido de Freio DOT 5.1",
     category: "Óleos",
     description: "Alta performance para sistemas de freio hidráulico sob altas temperaturas.",
-    imageUrl: "https://images.unsplash.com/photo-1530046339160-7115b7e93b43?q=80&w=1000&auto=format&fit=crop"
+    imageUrl: IMAGES.CAT_TECH
   },
   {
     id: 11,
     name: "Bomba D'água Diesel",
     category: "Motores",
     description: "Circulação eficiente do líquido de arrefecimento para evitar superaquecimento.",
-    imageUrl: "https://images.unsplash.com/photo-1569420959092-23c8d3506161?q=80&w=1000&auto=format&fit=crop"
+    imageUrl: IMAGES.PART_TURBO
   },
   {
     id: 12,
     name: "Cruzeta do Cardan",
     category: "Transmissão",
     description: "Transmissão de torque suave e sem vibrações para o eixo traseiro.",
-    imageUrl: "https://images.unsplash.com/photo-1626131481172-e61320d9385a?q=80&w=1000&auto=format&fit=crop"
+    imageUrl: IMAGES.PART_FILTER
   }
 ];
 
-export const SERVICES: Service[] = [
+// Replaced Services with Product Lines/Categories Highlights
+export const PRODUCT_LINES: CategoryHighlight[] = [
   {
     id: 1,
-    title: "Mecânica Diesel Geral",
-    description: "Diagnóstico completo e reparo de motores diesel leves e pesados com tecnologia de ponta.",
-    icon: "Wrench",
-    imageUrl: IMAGES.SERVICE_MECHANIC
+    title: "Motor & Performance",
+    description: "Turbinas, kits de motor, bombas d'água e componentes internos para máxima potência.",
+    icon: "Settings", // Cog
+    imageUrl: IMAGES.CAT_MECHANIC
   },
   {
     id: 2,
-    title: "Troca de Óleo Especializada",
-    description: "Utilizamos os melhores lubrificantes do mercado para garantir a vida útil do seu veículo.",
-    icon: "Droplet",
-    imageUrl: IMAGES.SERVICE_OIL
+    title: "Lubrificantes & Filtros",
+    description: "Linha completa de óleos minerais, sintéticos e filtros para proteção total do motor.",
+    icon: "Droplet", // Oil
+    imageUrl: IMAGES.CAT_OIL
   },
   {
     id: 3,
-    title: "Diagnóstico Computadorizado",
-    description: "Escaneamento completo para identificar falhas eletrônicas com precisão absoluta.",
-    icon: "Laptop",
-    imageUrl: IMAGES.SERVICE_DIAGNOSTIC
+    title: "Injeção Eletrônica",
+    description: "Bicos injetores, módulos e sensores de alta precisão para sistemas Common Rail.",
+    icon: "Laptop", // Tech
+    imageUrl: IMAGES.CAT_TECH
+  },
+  {
+    id: 4,
+    title: "Câmbio & Diferencial",
+    description: "Embreagens, cruzetas e peças de transmissão robustas para suportar carga pesada.",
+    icon: "Wrench", // Repair tool -> Parts tool
+    imageUrl: IMAGES.CAT_UNDERCARRIAGE
+  },
+  {
+    id: 5,
+    title: "Peças para Frota",
+    description: "Condições especiais para abastecimento de frotas de caminhões e ônibus.",
+    icon: "Truck", // Truck
+    imageUrl: IMAGES.CAT_FLEET
+  },
+  {
+    id: 6,
+    title: "Acessórios e Acabamento",
+    description: "Itens de acabamento e acessórios para manter seu veículo sempre novo.",
+    icon: "ShieldCheck", // Quality
+    imageUrl: IMAGES.CAT_SHELVES
   }
 ];
 
@@ -140,7 +166,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 1,
     name: "Carlos Mendes",
     role: "Caminhoneiro Autônomo",
-    text: "Atendimento de primeira! A peça chegou rápido e o serviço de instalação foi impecável. Recomendo demais a JPS.",
+    text: "Sempre encontro a peça que preciso. O estoque deles é impressionante e o preço é o melhor da região.",
     rating: 5,
     imageUrl: IMAGES.AVATAR_1
   },
@@ -148,7 +174,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 2,
     name: "Roberto Silva",
     role: "Gerente de Frota",
-    text: "Confio toda a nossa frota na mão da equipe JPS. Honestidade e preço justo, algo raro hoje em dia.",
+    text: "Compro todas as peças da frota na JPS. Entrega rápida e peças originais garantidas.",
     rating: 5,
     imageUrl: IMAGES.AVATAR_2
   },
@@ -156,7 +182,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 3,
     name: "Mariana Costa",
     role: "Proprietária de Van Escolar",
-    text: "Me salvaram numa emergência. Profissionais muito qualificados e atenciosos. O melhor de Caraguá.",
+    text: "Fui muito bem atendida. Os vendedores entendem muito de diesel e me indicaram o óleo certo.",
     rating: 4.5,
     imageUrl: IMAGES.AVATAR_3
   },
@@ -164,7 +190,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 4,
     name: "André Souza",
     role: "Transportadora Litoral",
-    text: "Preço justo e peças originais. A turbina que comprei está perfeita. Voltarei para as manutenções preventivas.",
+    text: "Preço justo e peças originais. A turbina que comprei está perfeita. Recomendo.",
     rating: 5,
     imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop"
   },
@@ -172,7 +198,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 5,
     name: "Fernanda Lima",
     role: "Empresária",
-    text: "Atendimento rápido no WhatsApp e entrega eficiente. Facilitou muito a manutenção da minha frota leve.",
+    text: "Facilidade de comprar pelo WhatsApp e retirar na loja. Agilidade que eu precisava.",
     rating: 5,
     imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
   }

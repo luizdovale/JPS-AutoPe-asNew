@@ -9,7 +9,7 @@ const About: React.FC = () => {
       <div className="bg-jps-main text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-anton text-4xl md:text-5xl mb-4">Nossa Trajetória</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">Conheça quem faz a JPS Auto Peças ser referência na região há mais de 25 anos.</p>
+          <p className="text-gray-300 max-w-2xl mx-auto">Conheça quem faz a JPS Auto Peças ser referência em distribuição na região há mais de 25 anos.</p>
         </div>
       </div>
 
@@ -21,18 +21,18 @@ const About: React.FC = () => {
             <div className="prose prose-lg text-gray-600">
               <h2 className="font-anton text-3xl text-jps-black mb-6">Tradição e Confiança</h2>
               <p className="mb-6">
-                A <strong>JPS Auto Peças</strong> atua há mais de 25 anos no mercado, oferecendo peças, manutenção e soluções completas para toda a linha diesel com qualidade, tradição e confiança.
+                A <strong>JPS Auto Peças</strong> atua há mais de 25 anos no mercado, oferecendo a maior variedade de peças e soluções para toda a linha diesel com qualidade, tradição e confiança.
               </p>
               <p className="mb-6">
-                Fundada em Caraguatatuba, nossa empresa nasceu da necessidade de um atendimento especializado para caminhoneiros e frotistas que trafegam pelo Litoral Norte. O que começou como uma pequena loja de peças, hoje é um centro automotivo completo.
+                Fundada em Caraguatatuba, nossa empresa nasceu da necessidade de um fornecimento ágil de peças para caminhoneiros e frotistas que trafegam pelo Litoral Norte. O que começou como uma pequena loja, hoje é um centro de distribuição completo.
               </p>
               <p>
-                Nosso compromisso não é apenas vender uma peça, mas garantir que o seu veículo volte para a estrada com segurança e eficiência. Entendemos a urgência de quem trabalha com transporte.
+                Nosso compromisso não é apenas vender uma peça, mas garantir que você tenha o produto certo, com a qualidade original, para que seu veículo volte para a estrada com segurança e eficiência o mais rápido possível.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={IMAGES.HERO_BG} className="rounded-lg shadow-lg w-full h-48 object-cover" alt="Oficina" />
-              <img src={IMAGES.SERVICE_MECHANIC} className="rounded-lg shadow-lg w-full h-48 object-cover mt-8" alt="Mecânica" />
+              <img src={IMAGES.HERO_BG} className="rounded-lg shadow-lg w-full h-48 object-cover" alt="Loja JPS" />
+              <img src={IMAGES.CAT_SHELVES} className="rounded-lg shadow-lg w-full h-48 object-cover mt-8" alt="Estoque" />
             </div>
           </div>
 
@@ -40,7 +40,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             {[
               { icon: History, label: "25+ Anos", desc: "De História" },
-              { icon: Users, label: "5000+", desc: "Clientes Atendidos" },
+              { icon: Users, label: "5000+", desc: "Clientes Satisfeitos" },
               { icon: Award, label: "100%", desc: "Peças Originais" },
               { icon: Target, label: "Especialista", desc: "Linha Diesel" },
             ].map((stat, i) => (

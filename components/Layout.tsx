@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin, Clock, Instagram, Facebook, Phone } from 'lucide-react';
 import FloatingWhatsApp from './FloatingWhatsApp';
-import { ADDRESS, SOCIAL_LINKS } from '../constants';
+import { ADDRESS, SOCIAL_LINKS, IMAGES } from '../constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,7 +29,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Catálogo', path: '/catalogo' },
-    { name: 'Serviços', path: '/servicos' },
     { name: 'Sobre Nós', path: '/sobre' },
     { name: 'Contato', path: '/contato' },
   ];
@@ -54,10 +53,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className={`sticky top-0 z-40 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md py-3' : 'shadow-sm py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Logo */}
-            <Link to="/" className="flex flex-col leading-none group">
-              <span className="font-anton text-5xl text-jps-main tracking-wider [text-shadow:2px_2px_4px_rgba(0,0,0,0.15)] group-hover:scale-105 transition-transform duration-300">JPS</span>
-              <span className="font-bold text-sm tracking-[0.3em] text-jps-light ml-1">AUTO PEÇAS</span>
+            {/* Logo Image */}
+            <Link to="/" className="block group">
+              <img 
+                src={IMAGES.LOGO} 
+                alt="JPS Auto Peças" 
+                className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -72,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </Link>
               ))}
               <Link to="/contato" className="bg-jps-gold hover:bg-yellow-500 text-jps-main font-bold py-2 px-6 rounded shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-0">
-                Orçamento
+                Fale Conosco
               </Link>
             </nav>
 
@@ -114,11 +116,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="mb-6">
-                <span className="font-anton text-4xl tracking-wider">JPS</span>
-                <span className="block text-sm tracking-[0.2em] text-jps-gold opacity-90">AUTO PEÇAS</span>
+                 {/* Footer Logo - White Filter Applied */}
+                 <img 
+                   src={IMAGES.LOGO} 
+                   alt="JPS Auto Peças" 
+                   className="h-20 w-auto object-contain brightness-0 invert opacity-90" 
+                 />
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                Referência em peças e serviços para linha diesel há mais de 25 anos. Qualidade, confiança e preço justo para você seguir viagem.
+                Referência na venda de peças para linha diesel há mais de 25 anos. Qualidade, estoque completo e preço justo para você.
               </p>
               <div className="flex space-x-4">
                 <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-jps-gold hover:text-jps-main p-2 rounded-full transition-all duration-300">
@@ -134,7 +140,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="font-anton text-xl mb-6 text-jps-gold tracking-wide">Links Rápidos</h3>
               <ul className="space-y-3 text-sm text-gray-300">
                 <li><Link to="/catalogo" className="hover:text-white transition-colors">Peças e Acessórios</Link></li>
-                <li><Link to="/servicos" className="hover:text-white transition-colors">Serviços Especializados</Link></li>
                 <li><Link to="/sobre" className="hover:text-white transition-colors">Nossa História</Link></li>
                 <li><Link to="/contato" className="hover:text-white transition-colors">Fale Conosco</Link></li>
               </ul>

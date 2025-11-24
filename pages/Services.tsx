@@ -1,9 +1,21 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { SERVICES, PHONE_NUMBER } from '../constants';
-import { Wrench, CheckCircle } from 'lucide-react';
+import { PRODUCT_LINES, PHONE_NUMBER } from '../constants';
+import { Wrench, CheckCircle, Droplet, Laptop, Settings, Truck, ShieldCheck } from 'lucide-react';
 
 const Services: React.FC = () => {
+  const getServiceIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'Wrench': return <Wrench size={24} />;
+      case 'Droplet': return <Droplet size={24} />;
+      case 'Laptop': return <Laptop size={24} />;
+      case 'Truck': return <Truck size={24} />;
+      case 'ShieldCheck': return <ShieldCheck size={24} />;
+      case 'Settings': return <Settings size={24} />;
+      default: return <Settings size={24} />;
+    }
+  };
+
   return (
     <Layout>
       <div className="bg-jps-main text-white py-16">
@@ -16,7 +28,7 @@ const Services: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
-            {SERVICES.map((service, index) => (
+            {PRODUCT_LINES.map((service, index) => (
               <div key={service.id} className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-1/2">
                    <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
@@ -31,7 +43,7 @@ const Services: React.FC = () => {
                 <div className="w-full md:w-1/2">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="bg-jps-gray p-3 rounded-full text-jps-main">
-                      <Wrench size={24} />
+                      {getServiceIcon(service.icon)}
                     </div>
                     <span className="text-jps-light font-bold uppercase tracking-widest text-sm">Nossos Serviços</span>
                   </div>

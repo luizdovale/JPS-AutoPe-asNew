@@ -6,7 +6,7 @@ export interface Product {
   imageUrl: string;
 }
 
-export interface Service {
+export interface CategoryHighlight {
   id: number;
   title: string;
   description: string;

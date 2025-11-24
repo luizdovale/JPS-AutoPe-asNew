@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Settings, ShieldCheck, Truck, ChevronLeft, ChevronRight, Quote, Wrench, Droplet, Laptop } from 'lucide-react';
 import Layout from '../components/Layout';
 import ProductCard from '../components/ProductCard';
-import { IMAGES, PRODUCTS, TESTIMONIALS, SERVICES } from '../constants';
+import { IMAGES, PRODUCTS, TESTIMONIALS, PRODUCT_LINES } from '../constants';
 
 const Home: React.FC = () => {
   // Select 3 products for featured section
@@ -20,11 +20,14 @@ const Home: React.FC = () => {
     }
   };
 
-  const getServiceIcon = (iconName: string) => {
+  const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Wrench': return <Wrench size={24} />;
       case 'Droplet': return <Droplet size={24} />;
       case 'Laptop': return <Laptop size={24} />;
+      case 'Truck': return <Truck size={24} />;
+      case 'ShieldCheck': return <ShieldCheck size={24} />;
+      case 'Settings': return <Settings size={24} />;
       default: return <Settings size={24} />;
     }
   };
@@ -36,7 +39,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={IMAGES.HERO_BG} 
-            alt="Oficina Diesel JPS" 
+            alt="Loja JPS Auto Peças" 
             className="w-full h-full object-cover animate-fade-in"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-jps-main via-jps-main/80 to-transparent mix-blend-multiply"></div>
@@ -46,20 +49,20 @@ const Home: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl text-white">
             <div className="opacity-0 animate-fade-in-up inline-flex items-center gap-2 bg-jps-gold text-jps-main font-black px-4 py-1.5 text-sm rounded shadow-lg mb-8 uppercase tracking-wider">
-              <Star size={14} fill="currentColor" /> Desde 1999
+              <Star size={14} fill="currentColor" /> Desde 1992
             </div>
             <h1 className="opacity-0 animate-fade-in-up-delay-1 text-5xl md:text-7xl font-anton uppercase tracking-tight leading-tight mb-6 drop-shadow-2xl">
-              Potência e <br className="hidden md:block"/>Confiança para <br/><span className="text-jps-gold bg-black/10 px-2 rounded">Linha Diesel</span>
+              Peças de Alta <br className="hidden md:block"/>Performance para <br/><span className="text-jps-gold bg-black/10 px-2 rounded">Linha Diesel</span>
             </h1>
             <p className="opacity-0 animate-fade-in-up-delay-2 text-xl text-gray-100 mb-10 font-light border-l-4 border-jps-gold pl-6 max-w-2xl leading-relaxed">
-              Há mais de 25 anos atendendo com excelência. Peças originais, manutenção especializada e o melhor atendimento do litoral.
+              Há mais de 25 anos fornecendo a maior variedade de peças com excelência para toda a linha diesel.
             </p>
             <div className="opacity-0 animate-fade-in-up-delay-2 flex flex-col sm:flex-row gap-4">
               <Link to="/catalogo" className="bg-jps-gold text-jps-main font-black text-lg py-4 px-10 rounded-lg hover:bg-white transition-all shadow-lg hover:shadow-jps-gold/50 transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
                 Ver Peças <ArrowRight size={20} />
               </Link>
-              <Link to="/servicos" className="backdrop-blur-sm bg-white/10 border-2 border-white/30 text-white font-bold text-lg py-4 px-10 rounded-lg hover:bg-white hover:text-jps-main transition-all text-center">
-                Nossos Serviços
+              <Link to="/contato" className="backdrop-blur-sm bg-white/10 border-2 border-white/30 text-white font-bold text-lg py-4 px-10 rounded-lg hover:bg-white hover:text-jps-main transition-all text-center">
+                Fale Conosco
               </Link>
             </div>
           </div>
@@ -70,8 +73,8 @@ const Home: React.FC = () => {
       <section className="py-20 bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="font-anton text-4xl text-jps-black mb-4">Por que escolher a JPS?</h2>
-            <p className="text-gray-500 text-lg">Combinamos tradição com tecnologia para oferecer o melhor custo-benefício para sua frota.</p>
+            <h2 className="font-anton text-4xl text-jps-black mb-4">Por que comprar na JPS?</h2>
+            <p className="text-gray-500 text-lg">Estoque completo e atendimento técnico especializado para você encontrar exatamente o que precisa.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -80,55 +83,55 @@ const Home: React.FC = () => {
                 <Truck size={40} strokeWidth={1.5} />
               </div>
               <h3 className="font-anton text-2xl text-jps-main mb-3">Especialista Diesel</h3>
-              <p className="text-gray-500 leading-relaxed">Especialistas em caminhões, ônibus e utilitários. Conhecimento técnico aprofundado em todas as marcas.</p>
+              <p className="text-gray-500 leading-relaxed">Conhecimento técnico aprofundado em peças para caminhões, ônibus e utilitários de todas as marcas.</p>
             </div>
             <div className="group bg-jps-gray hover:bg-white p-8 rounded-2xl transition-all duration-300 border border-transparent hover:border-gray-100 hover:shadow-xl hover:-translate-y-1">
               <div className="bg-white group-hover:bg-jps-main p-4 rounded-xl w-fit mb-6 text-jps-main group-hover:text-jps-gold transition-colors shadow-sm">
                 <Settings size={40} strokeWidth={1.5} />
               </div>
-              <h3 className="font-anton text-2xl text-jps-main mb-3">Peças de 1ª Linha</h3>
-              <p className="text-gray-500 leading-relaxed">Trabalhamos apenas com fornecedores certificados e peças originais para garantir durabilidade extrema.</p>
+              <h3 className="font-anton text-2xl text-jps-main mb-3">Estoque Premium</h3>
+              <p className="text-gray-500 leading-relaxed">Trabalhamos apenas com fornecedores certificados e peças originais para garantir a durabilidade do seu motor.</p>
             </div>
             <div className="group bg-jps-gray hover:bg-white p-8 rounded-2xl transition-all duration-300 border border-transparent hover:border-gray-100 hover:shadow-xl hover:-translate-y-1">
               <div className="bg-white group-hover:bg-jps-main p-4 rounded-xl w-fit mb-6 text-jps-main group-hover:text-jps-gold transition-colors shadow-sm">
                 <ShieldCheck size={40} strokeWidth={1.5} />
               </div>
-              <h3 className="font-anton text-2xl text-jps-main mb-3">Garantia Total</h3>
-              <p className="text-gray-500 leading-relaxed">Segurança em todos os serviços prestados e peças vendidas. Sua frota está em boas mãos na JPS.</p>
+              <h3 className="font-anton text-2xl text-jps-main mb-3">Garantia e Confiança</h3>
+              <p className="text-gray-500 leading-relaxed">Segurança em todas as peças vendidas. Sua frota está em boas mãos com produtos de procedência garantida.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Visual Section */}
+      {/* Product Categories Visual Section (Replaces Services) */}
       <section className="py-20 bg-jps-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-              <span className="text-jps-light font-bold tracking-widest text-sm uppercase">Soluções Completas</span>
-              <h2 className="font-anton text-4xl text-jps-main mt-2">Nossos Serviços</h2>
+              <span className="text-jps-light font-bold tracking-widest text-sm uppercase">Tudo para seu veículo</span>
+              <h2 className="font-anton text-4xl text-jps-main mt-2">Nossas Especialidades</h2>
             </div>
-            <Link to="/servicos" className="text-jps-main font-bold flex items-center gap-2 hover:text-jps-light transition-colors mt-4 md:mt-0">
-              Ver todos os serviços <ArrowRight size={20} />
+            <Link to="/catalogo" className="text-jps-main font-bold flex items-center gap-2 hover:text-jps-light transition-colors mt-4 md:mt-0">
+              Ver catálogo completo <ArrowRight size={20} />
             </Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICES.slice(0, 3).map((service) => (
-              <Link to="/servicos" key={service.id} className="group relative rounded-xl overflow-hidden h-80 shadow-lg">
+            {PRODUCT_LINES.slice(0, 3).map((line) => (
+              <Link to="/catalogo" key={line.id} className="group relative rounded-xl overflow-hidden h-80 shadow-lg cursor-pointer">
                 <img 
-                  src={service.imageUrl} 
-                  alt={service.title} 
+                  src={line.imageUrl} 
+                  alt={line.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-jps-black/90 via-jps-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 w-full">
                   <div className="text-jps-gold mb-2 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    {getServiceIcon(service.icon)}
+                    {getIcon(line.icon)}
                   </div>
-                  <h3 className="font-anton text-2xl text-white mb-1">{service.title}</h3>
+                  <h3 className="font-anton text-2xl text-white mb-1">{line.title}</h3>
                   <p className="text-gray-300 text-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    {service.description}
+                    {line.description}
                   </p>
                 </div>
               </Link>
@@ -152,7 +155,7 @@ const Home: React.FC = () => {
               <h2 className="font-anton text-4xl md:text-5xl text-white mt-4">Destaques do Mês</h2>
             </div>
             <Link to="/catalogo" className="group flex items-center gap-3 text-white font-bold border border-white/20 px-6 py-3 rounded-full hover:bg-white hover:text-jps-black transition-all">
-              Ver catálogo completo <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              Ver todos os produtos <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
@@ -178,19 +181,19 @@ const Home: React.FC = () => {
           <div className="bg-jps-gray p-12 lg:p-24 flex flex-col justify-center">
             <span className="text-jps-light font-bold tracking-widest text-sm uppercase mb-4">Nossa História</span>
             <h2 className="font-anton text-4xl md:text-5xl mb-6 leading-tight text-jps-main">
-              Excelência Técnica e <br/>Paixão por Motores
+              Tradição e Variedade <br/>em Peças Diesel
             </h2>
             <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              Nossa história começou há mais de duas décadas, focada em resolver os problemas mais complexos da linha pesada. Hoje, somos referência em Caraguatatuba e região, oferecendo um mix completo de peças e mão de obra especializada.
+              Nossa história começou há mais de duas décadas, focada em fornecer as melhores peças para a linha pesada. Hoje, somos a maior distribuidora de Caraguatatuba e região, oferecendo um mix completo de produtos para manter seu veículo na estrada.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-10">
                 <div>
                    <h4 className="font-anton text-3xl text-jps-gold mb-1">25+</h4>
-                   <p className="text-sm font-bold text-gray-500 uppercase">Anos de Mercado</p>
+                   <p className="text-sm font-bold text-gray-500 uppercase">Anos de Loja</p>
                 </div>
                 <div>
                    <h4 className="font-anton text-3xl text-jps-gold mb-1">5k+</h4>
-                   <p className="text-sm font-bold text-gray-500 uppercase">Clientes Satisfeitos</p>
+                   <p className="text-sm font-bold text-gray-500 uppercase">Itens em Estoque</p>
                 </div>
             </div>
             <Link to="/sobre" className="text-jps-main font-bold border-b-2 border-jps-main pb-1 w-fit hover:text-jps-light hover:border-jps-light transition-colors">
@@ -206,7 +209,7 @@ const Home: React.FC = () => {
           <div className="flex justify-between items-end mb-16">
             <div>
                <span className="text-jps-light font-bold tracking-widest text-sm uppercase">Avaliações</span>
-               <h2 className="font-anton text-4xl text-jps-black mt-2">O que dizem nossos parceiros</h2>
+               <h2 className="font-anton text-4xl text-jps-black mt-2">O que dizem nossos clientes</h2>
             </div>
             <div className="flex gap-4">
               <button 
