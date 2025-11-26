@@ -58,7 +58,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <img 
                 src={IMAGES.LOGO} 
                 alt="JPS Auto Peças" 
-                className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                className="h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
             </Link>
 
