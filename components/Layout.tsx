@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1"><MapPin size={12} className="text-jps-gold" /> Caraguatatuba - SP</span>
-            <span className="flex items-center gap-1"><Clock size={12} className="text-jps-gold" /> Seg-Sex: 8h às 18h | Sáb: 8h às 12h</span>
+            <span className="flex items-center gap-1"><Clock size={12} className="text-jps-gold" /> Seg-Sex: 07:30 às 18:00 | Sáb: 07:30 às 12:00</span>
           </div>
           <div className="flex items-center gap-3">
             <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-jps-gold transition-colors"><Instagram size={14} /></a>
@@ -158,7 +158,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </li>
                 <li className="flex items-center gap-3">
                   <Clock size={18} className="text-jps-gold flex-shrink-0" />
-                  <span>Seg-Sex: 8h às 18h | Sáb: 8h às 12h</span>
+                  <span>Seg-Sex: 07:30 às 18:00 | Sáb: 07:30 às 12:00</span>
                 </li>
               </ul>
             </div>
@@ -166,7 +166,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
             <p>&copy; {new Date().getFullYear()} JPS Auto Peças. Todos os direitos reservados.</p>
-            <p className="mt-2 md:mt-0 font-medium">Desenvolvido por Luís do Vale.</p>
+            <p className="mt-2 md:mt-0 font-medium">Desenvolvido por luizdovaletech.</p>
           </div>
         </div>
       </footer>
