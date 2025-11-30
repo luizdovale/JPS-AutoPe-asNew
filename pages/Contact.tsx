@@ -132,11 +132,15 @@ const Contact: React.FC = () => {
                  <h4 className="font-anton text-xl mb-4">Horário de Funcionamento</h4>
                  <div className="flex justify-between text-sm text-gray-300">
                    <span>Segunda a Sexta</span>
-                   <span>08:00 - 18:00</span>
+                   <span>07:30 - 18:00</span>
                  </div>
                  <div className="flex justify-between text-sm text-gray-300 mt-2">
                    <span>Sábado</span>
-                   <span>08:00 - 12:00</span>
+                   <span>07:30 - 12:00</span>
+                 </div>
+                 <div className="flex justify-between text-sm text-gray-300 mt-2">
+                   <span>Domingo</span>
+                   <span>Fechado</span>
                  </div>
               </div>
             </div>
