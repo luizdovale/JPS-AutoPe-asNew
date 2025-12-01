@@ -13,7 +13,7 @@ export const IMAGES = {
   CAT_FLEET: "https://images.unsplash.com/photo-1596683769970-13d80630dc65?q=80&w=2000&auto=format&fit=crop", // Fleet/Trucks line
   PART_FILTER: "https://images.unsplash.com/photo-1626131481172-e61320d9385a?q=80&w=1000&auto=format&fit=crop", // Industrial Filter style
   PART_TURBO: "https://images.unsplash.com/photo-1569420959092-23c8d3506161?q=80&w=1000&auto=format&fit=crop", // Turbo/Metal
-  PART_BRAKE: "https://images.unsplash.com/photo-1498887960847-2a5e46312788?q=80&w=1000&auto=format&fit=crop", // Disc brake
+  PART_BRAKE: "https://lh3.googleusercontent.com/pw/AP1GczOQ__XD_RCOObbkEplzl_ilyr38j4FjrSk7JW2THaZTAmNvihlgHlH2q2KaUk2cuft7pn9k0YQyPGVHq-AdzR-fejVbHEzwIcnzaIm77S6I_sohGMW8CIOaNwOi2yoFy7FJ-vqsQRPE9DEQPbzJong=w607-h607-s-no-gm?authuser=4", // Disc brake
   AVATAR_1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
   AVATAR_2: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
   AVATAR_3: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
