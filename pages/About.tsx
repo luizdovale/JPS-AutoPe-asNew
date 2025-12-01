@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import { IMAGES } from '../constants';
+import { IMAGENS } from '../constants';
 import { Award, Users, History, Target } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -16,7 +16,7 @@ const About: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Main Story */}
+          {/* História Principal */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
             <div className="prose prose-lg text-gray-600">
               <h2 className="font-anton text-3xl text-jps-black mb-6">Tradição e Confiança</h2>
@@ -31,12 +31,12 @@ const About: React.FC = () => {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={IMAGES.HERO_BG} className="rounded-lg shadow-lg w-full h-48 object-cover" alt="Loja JPS" />
-              <img src={IMAGES.CAT_SHELVES} className="rounded-lg shadow-lg w-full h-48 object-cover mt-8" alt="Estoque" />
+              <img src={IMAGENS.FUNDO_HERO} className="rounded-lg shadow-lg w-full h-48 object-cover" alt="Loja JPS" />
+              <img src={IMAGENS.CAT_PRATELEIRAS} className="rounded-lg shadow-lg w-full h-48 object-cover mt-8" alt="Estoque" />
             </div>
           </div>
 
-          {/* Stats/Values */}
+          {/* Estatísticas/Valores */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-20">
             {[
               { icon: History, label: "25+ Anos", desc: "De História" },

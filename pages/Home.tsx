@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Star, Settings, ShieldCheck, Truck, ChevronLeft, ChevronRight, Quote, Wrench, Droplet, Laptop } from 'lucide-react';
 import Layout from '../components/Layout';
 import ProductCard from '../components/ProductCard';
-import { IMAGES, PRODUCTS, TESTIMONIALS, PRODUCT_LINES } from '../constants';
+import { IMAGENS, PRODUTOS, DEPOIMENTOS, LINHAS_PRODUTOS } from '../constants';
 
 const Home: React.FC = () => {
-  // Select 3 products for featured section
-  const featuredProducts = PRODUCTS.slice(0, 3);
+  // Seleciona 3 produtos para a seção de destaque
+  const featuredProducts = PRODUTOS.slice(0, 3);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 340; // Approx card width + gap
+      const scrollAmount = 340; // Largura aproximada do cartão + espaçamento
       scrollContainerRef.current.scrollBy({
         left: direction === 'right' ? scrollAmount : -scrollAmount,
         behavior: 'smooth'
@@ -34,11 +34,11 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Seção Hero */}
       <section className="relative h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={IMAGES.HERO_BG} 
+            src={IMAGENS.FUNDO_HERO} 
             alt="Loja JPS Auto Peças" 
             className="w-full h-full object-cover animate-fade-in"
           />
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Institutional Highlights (Why Choose Us) */}
+      {/* Destaques Institucionais (Por que nos escolher) */}
       <section className="py-20 bg-white relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Product Categories Visual Section (Replaces Services) */}
+      {/* Categorias de Produtos Visual (Substitui Serviços) */}
       <section className="py-20 bg-jps-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PRODUCT_LINES.slice(0, 3).map((line) => (
+            {LINHAS_PRODUTOS.slice(0, 3).map((line) => (
               <Link to="/catalogo" key={line.id} className="group relative rounded-xl overflow-hidden h-80 shadow-lg cursor-pointer">
                 <img 
                   src={line.imageUrl} 
@@ -140,9 +140,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Produtos em Destaque */}
       <section className="py-24 bg-jps-black relative overflow-hidden">
-        {/* Abstract shapes */}
+        {/* Formas abstratas */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-jps-main/20 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-jps-light/10 rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -167,12 +167,12 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* About Section Preview */}
+      {/* Prévia da Seção Sobre */}
       <section className="py-0 bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative h-[500px] lg:h-auto overflow-hidden group">
             <img 
-              src={IMAGES.ABOUT_TEAM} 
+              src={IMAGENS.SOBRE_EQUIPE} 
               alt="Equipe JPS" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Testimonials Carousel */}
+      {/* Carrossel de Depoimentos */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-16">
@@ -234,7 +234,7 @@ const Home: React.FC = () => {
             className="flex gap-8 overflow-x-auto snap-x snap-mandatory pb-8 no-scrollbar scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {TESTIMONIALS.map(testimonial => (
+            {DEPOIMENTOS.map(testimonial => (
               <div 
                 key={testimonial.id} 
                 className="flex-none w-[320px] md:w-[400px] snap-center bg-white p-8 rounded-2xl border border-gray-100 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] flex flex-col h-[350px]"

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import { PHONE_NUMBER, ADDRESS, GOOGLE_MAPS_EMBED } from '../constants';
+import { NUMERO_TELEFONE, ENDERECO, MAPA_GOOGLE_EMBED } from '../constants';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá, meu nome é ${formData.name}. Telefone: ${formData.phone}. Mensagem: ${formData.message}. Enviado pelo site da JPS Auto Peças.`;
-    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/${NUMERO_TELEFONE}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
             
-            {/* Form Side */}
+            {/* Lado do Formulário */}
             <div className="p-8 md:p-12">
               <h2 className="font-anton text-3xl text-jps-black mb-2">Envie uma mensagem</h2>
               <p className="text-gray-500 mb-8">Responderemos o mais breve possível via WhatsApp.</p>
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
               </form>
             </div>
 
-            {/* Info Side */}
+            {/* Lado das Informações */}
             <div className="bg-jps-main text-white p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-jps-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-1">Endereço</p>
-                    <p className="text-lg leading-relaxed">{ADDRESS}</p>
+                    <p className="text-lg leading-relaxed">{ENDERECO}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -132,11 +132,11 @@ const Contact: React.FC = () => {
                  <h4 className="font-anton text-xl mb-4">Horário de Funcionamento</h4>
                  <div className="flex justify-between text-sm text-gray-300">
                    <span>Segunda a Sexta</span>
-                   <span>07:30 - 18:00</span>
+                   <span>7:30 - 18:00</span>
                  </div>
                  <div className="flex justify-between text-sm text-gray-300 mt-2">
                    <span>Sábado</span>
-                   <span>07:30 - 12:00</span>
+                   <span>7:30 - 12:00</span>
                  </div>
                  <div className="flex justify-between text-sm text-gray-300 mt-2">
                    <span>Domingo</span>
@@ -146,10 +146,10 @@ const Contact: React.FC = () => {
             </div>
           </div>
           
-          {/* Map */}
+          {/* Mapa */}
           <div className="mt-12 bg-white p-2 rounded-xl shadow-lg h-[400px]">
              <iframe 
-               src={GOOGLE_MAPS_EMBED} 
+               src={MAPA_GOOGLE_EMBED} 
                width="100%" 
                height="100%" 
                style={{ border: 0, borderRadius: '0.75rem' }} 

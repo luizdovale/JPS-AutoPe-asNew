@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin, Clock, Instagram, Facebook, Phone } from 'lucide-react';
 import FloatingWhatsApp from './FloatingWhatsApp';
-import { ADDRESS, SOCIAL_LINKS, IMAGES } from '../constants';
+import { ENDERECO, LINKS_SOCIAIS, IMAGENS } from '../constants';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,34 +35,34 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
-      {/* Top Bar - Desktop Only */}
+      {/* Barra Superior - Apenas Desktop */}
       <div className="hidden md:block bg-jps-main text-white py-2 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1"><MapPin size={12} className="text-jps-gold" /> Caraguatatuba - SP</span>
-            <span className="flex items-center gap-1"><Clock size={12} className="text-jps-gold" /> Seg-Sex: 07:30 às 18:00 | Sáb: 07:30 às 12:00</span>
+            <span className="flex items-center gap-1"><Clock size={12} className="text-jps-gold" /> Seg-Sex: 7:30 às 18:00 | Sáb: 7:30 às 12:00 | Dom: Fechado</span>
           </div>
           <div className="flex items-center gap-3">
-            <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-jps-gold transition-colors"><Instagram size={14} /></a>
-            <a href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="hover:text-jps-gold transition-colors"><Facebook size={14} /></a>
+            <a href={LINKS_SOCIAIS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:text-jps-gold transition-colors"><Instagram size={14} /></a>
+            <a href={LINKS_SOCIAIS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="hover:text-jps-gold transition-colors"><Facebook size={14} /></a>
           </div>
         </div>
       </div>
 
-      {/* Main Header */}
+      {/* Cabeçalho Principal */}
       <header className={`sticky top-0 z-40 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md py-3' : 'shadow-sm py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Logo Image */}
+            {/* Imagem da Logo */}
             <Link to="/" className="block group">
               <img 
-                src={IMAGES.LOGO} 
+                src={IMAGENS.LOGO} 
                 alt="JPS Auto Peças" 
                 className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
             </Link>
 
-            {/* Desktop Nav */}
+            {/* Navegação Desktop */}
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
@@ -78,7 +78,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </Link>
             </nav>
 
-            {/* Mobile Menu Button */}
+            {/* Botão Menu Mobile */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-jps-main focus:outline-none"
@@ -88,7 +88,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Navegação Mobile */}
         <div className={`md:hidden absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
             {navLinks.map((link) => (
@@ -110,15 +110,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       <FloatingWhatsApp />
 
-      {/* Footer */}
+      {/* Rodapé */}
       <footer className="bg-jps-main text-white pt-16 pb-8 border-t-4 border-jps-gold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
               <div className="mb-6">
-                 {/* Footer Logo - White Filter Applied */}
+                 {/* Logo do Rodapé - Filtro Branco Aplicado */}
                  <img 
-                   src={IMAGES.LOGO} 
+                   src={IMAGENS.LOGO} 
                    alt="JPS Auto Peças" 
                    className="h-20 w-auto object-contain brightness-0 invert opacity-90" 
                  />
@@ -127,10 +127,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 Referência na venda de peças para linha diesel há mais de 25 anos. Qualidade, estoque completo e preço justo para você.
               </p>
               <div className="flex space-x-4">
-                <a href={SOCIAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-jps-gold hover:text-jps-main p-2 rounded-full transition-all duration-300">
+                <a href={LINKS_SOCIAIS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-jps-gold hover:text-jps-main p-2 rounded-full transition-all duration-300">
                   <Instagram size={20} />
                 </a>
-                <a href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-jps-gold hover:text-jps-main p-2 rounded-full transition-all duration-300">
+                <a href={LINKS_SOCIAIS.FACEBOOK} target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-jps-gold hover:text-jps-main p-2 rounded-full transition-all duration-300">
                   <Facebook size={20} />
                 </a>
               </div>
@@ -150,15 +150,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <ul className="space-y-4 text-sm text-gray-300">
                 <li className="flex items-start gap-3">
                   <MapPin size={18} className="text-jps-gold flex-shrink-0 mt-0.5" />
-                  <span>{ADDRESS}</span>
+                  <span>{ENDERECO}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Phone size={18} className="text-jps-gold flex-shrink-0" />
                   <span>(12) 97404-5244</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <Clock size={18} className="text-jps-gold flex-shrink-0" />
-                  <span>Seg-Sex: 07:30 às 18:00 | Sáb: 07:30 às 12:00</span>
+                <li className="flex items-start gap-3">
+                  <Clock size={18} className="text-jps-gold flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p>Segunda a Sexta - 7:30 as 18:00</p>
+                    <p>Sábado - 7:30 as 12:00</p>
+                    <p>Domingo - Fechado</p>
+                  </div>
                 </li>
               </ul>
             </div>

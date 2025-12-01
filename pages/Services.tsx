@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { PRODUCT_LINES, PHONE_NUMBER } from '../constants';
+import { LINHAS_PRODUTOS, NUMERO_TELEFONE } from '../constants';
 import { Wrench, CheckCircle, Droplet, Laptop, Settings, Truck, ShieldCheck } from 'lucide-react';
 
 const Services: React.FC = () => {
@@ -28,7 +28,7 @@ const Services: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
-            {PRODUCT_LINES.map((service, index) => (
+            {LINHAS_PRODUTOS.map((service, index) => (
               <div key={service.id} className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-1/2">
                    <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
@@ -60,7 +60,7 @@ const Services: React.FC = () => {
                   </ul>
 
                   <a 
-                    href={`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(`Olá, gostaria de agendar um serviço de ${service.title}.`)}`}
+                    href={`https://wa.me/${NUMERO_TELEFONE}?text=${encodeURIComponent(`Olá, gostaria de agendar um serviço de ${service.title}.`)}`}
                     target="_blank"
                     className="inline-block bg-jps-main text-white font-bold py-3 px-8 rounded hover:bg-jps-light transition-colors"
                   >

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import ProductCard from '../components/ProductCard';
-import { PRODUCTS } from '../constants';
+import { PRODUTOS } from '../constants';
 import { Search } from 'lucide-react';
 
 const Catalog: React.FC = () => {
@@ -10,7 +10,7 @@ const Catalog: React.FC = () => {
 
   const categories = ['Todos', 'Filtros', 'Motores', 'Freios', 'Óleos', 'Transmissão', 'Injeção'];
 
-  const filteredProducts = PRODUCTS.filter(product => {
+  const filteredProducts = PRODUTOS.filter(product => {
     const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           product.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -29,7 +29,7 @@ const Catalog: React.FC = () => {
       <section className="py-12 bg-jps-gray min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Search/Filter Bar */}
+          {/* Barra de Pesquisa/Filtro */}
           <div className="bg-white p-6 rounded-lg shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between sticky top-24 z-30 border border-gray-100">
             <div className="relative w-full md:w-96">
               <input 
@@ -54,7 +54,7 @@ const Catalog: React.FC = () => {
             </div>
           </div>
 
-          {/* Product Grid */}
+          {/* Grade de Produtos */}
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProducts.map(product => (

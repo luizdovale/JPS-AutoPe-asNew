@@ -1,6 +1,6 @@
 import React from 'react';
 import { Product } from '../types';
-import { PHONE_NUMBER } from '../constants';
+import { NUMERO_TELEFONE } from '../constants';
 import { MessageCircle } from 'lucide-react';
 
 interface ProductCardProps {
@@ -10,7 +10,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const handleConsult = () => {
     const text = `Olá, gostaria de consultar o valor do produto: ${product.name} (Ref: ${product.id})`;
-    window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/${NUMERO_TELEFONE}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (

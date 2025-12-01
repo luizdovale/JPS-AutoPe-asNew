@@ -1,10 +1,10 @@
 import React from 'react';
-import { PHONE_NUMBER } from '../constants';
+import { NUMERO_TELEFONE } from '../constants';
 
 const FloatingWhatsApp: React.FC = () => {
   const handleClick = () => {
     const message = encodeURIComponent("Olá! Vim pelo site da JPS Auto Peças e gostaria de mais informações.");
-    window.open(`https://wa.me/${PHONE_NUMBER}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${NUMERO_TELEFONE}?text=${message}`, '_blank');
   };
 
   return (
