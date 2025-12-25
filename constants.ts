@@ -26,7 +26,7 @@ export const ENDERECO = "Avenida Marginal Esquerda, 281 - Poiares - Caraguatatub
 export const MAPA_GOOGLE_EMBED = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.228919658253!2d-45.42878952377317!3d-23.63197666418858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd631024227911%3A0xc3f7a4e9b89369b7!2sAv.%20Marginal%20Esquerda%2C%20281%20-%20Poiares%2C%20Caraguatatuba%20-%20SP%2C%2011673-010!5e0!3m2!1spt-BR!2sbr!4v1715000000000!5m2!1spt-BR!2sbr";
 
 export const LINKS_SOCIAIS = {
-  INSTAGRAM: "https://www.instagram.com/jpsautopecas",
+  INSTAGRAM: "https://www.instagram.com/jpsscherer/",
   FACEBOOK: "https://www.facebook.com/joni.scherer.73"
 };
 
