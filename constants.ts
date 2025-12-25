@@ -1,22 +1,24 @@
 import { Product, CategoryHighlight, Testimonial } from './types';
 
-// Imagens selecionadas para parecerem gerações de IA realistas de alta qualidade (contexto Industrial/Diesel)
 export const IMAGENS = {
-  LOGO: "/logo.png", // Rota para a imagem da logo
-  FUNDO_HERO: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop", // Caminhão grande na garagem
-  SOBRE_EQUIPE: "https://images.unsplash.com/photo-1504222490245-4815c9e610a0?q=80&w=2069&auto=format&fit=crop", // Mecânico trabalhando (usado como contexto para manuseio de peças)
-  CAT_MECANICO: "https://images.unsplash.com/photo-1487754180477-ea9d60309c91?q=80&w=2000&auto=format&fit=crop", // Engrenagens/Peças em close
-  CAT_OLEO: "https://images.unsplash.com/photo-1486262715619-01b80258e0a5?q=80&w=2070&auto=format&fit=crop", // Óleo derramando
-  CAT_TECNOLOGIA: "https://images.unsplash.com/photo-1530046339160-7115b7e93b43?q=80&w=2000&auto=format&fit=crop", // Peças tecnológicas
-  CAT_CHASSI: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop", // Peças do chassi
-  CAT_PRATELEIRAS: "https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=2000&auto=format&fit=crop", // Prateleiras/Peças
-  CAT_FROTA: "https://images.unsplash.com/photo-1596683769970-13d80630dc65?q=80&w=2000&auto=format&fit=crop", // Frota/Linha de caminhões
-  PECA_FILTRO: "https://images.unsplash.com/photo-1626131481172-e61320d9385a?q=80&w=1000&auto=format&fit=crop", // Estilo de filtro industrial
-  PECA_TURBO: "https://images.unsplash.com/photo-1569420959092-23c8d3506161?q=80&w=1000&auto=format&fit=crop", // Turbo/Metal
-  PECA_FREIO: "https://images.unsplash.com/photo-1498887960847-2a5e46312788?q=80&w=1000&auto=format&fit=crop", // Freio a disco
+  LOGO: "/img/logo.png",
+  FUNDO_HERO: "/img/hero-fundo.png",
+  SOBRE_EQUIPE: "/img/sobre-equipe.png",
+  CAT_MECANICO: "/img/cat-mecanico.png",
+  CAT_OLEO: "/img/cat-oleo.png",
+  CAT_TECNOLOGIA: "/img/cat-tecnologia.png",
+  CAT_CHASSI: "/img/cat-chassi.png",
+  CAT_PRATELEIRAS: "/img/cat-prateleiras.png",
+  CAT_FROTA: "/img/cat-frota.png",
+  PECA_FILTRO: "/img/peca-filtro.png",
+  PECA_TURBO: "/img/peca-turbo.png",
+  PECA_FREIO: "/img/peca-freio.png",
+  // Avatares mantidos com URLs sugeridas (Unsplash)
   AVATAR_1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
   AVATAR_2: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
   AVATAR_3: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+  AVATAR_4: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+  AVATAR_5: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
 };
 
 export const NUMERO_TELEFONE = "5512974045244";
@@ -31,132 +33,90 @@ export const LINKS_SOCIAIS = {
 export const PRODUTOS: Product[] = [
   {
     id: 1,
-    name: "Kit Filtros Linha Pesada",
-    category: "Filtros",
-    description: "Proteção máxima para motores diesel de alta performance. Kit completo ar/óleo/combustível.",
-    imageUrl: IMAGENS.PECA_FILTRO
+    name: "Mangueiras de Alta Pressão",
+    category: "Hidráulica",
+    description: "Mangueiras hidráulicas e de ar com fabricação própria. Resistência extrema e medidas personalizadas para sua necessidade.",
+    imageUrl: "/img/peca-mangueira.png",
+    isCustomMade: true
   },
   {
     id: 2,
-    name: "Óleo Lubrificante 15W40 Top",
-    category: "Óleos",
-    description: "Lubrificação avançada para maior durabilidade do motor em condições extremas.",
-    imageUrl: IMAGENS.CAT_OLEO
+    name: "Kit Filtros Diesel Premium",
+    category: "Filtros",
+    description: "Conjunto completo de filtros (ar, óleo e combustível) para proteção máxima do sistema de injeção.",
+    imageUrl: "/img/peca-filtro.png"
   },
   {
     id: 3,
-    name: "Turbina Master Power .50",
-    category: "Motores",
-    description: "Potência e eficiência redobrada para caminhões e utilitários de carga.",
-    imageUrl: IMAGENS.PECA_TURBO
+    name: "Kit Embreagem Linha Pesada",
+    category: "Transmissão",
+    description: "Conjunto de platô, disco e rolamento reforçados para alta durabilidade em caminhões e ônibus.",
+    imageUrl: "/img/peca-embreagem.png"
   },
   {
     id: 4,
-    name: "Disco de Freio Ventilado",
-    category: "Freios",
-    description: "Segurança total com dissipação de calor otimizada para serras e declives.",
-    imageUrl: IMAGENS.PECA_FREIO
+    name: "Bicos Injetores Common Rail",
+    category: "Injeção",
+    description: "Componentes de alta precisão para sistemas de injeção eletrônica diesel, garantindo economia e potência.",
+    imageUrl: "/img/peca-injecao.png"
   },
   {
     id: 5,
-    name: "Kit Embreagem Reforçada",
-    category: "Transmissão",
-    description: "Durabilidade extrema para o dia a dia na estrada. Platô e disco inclusos.",
-    imageUrl: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=1000&auto=format&fit=crop"
+    name: "Óleos e Lubrificantes 15W40",
+    category: "Lubrificantes",
+    description: "Linha completa de óleos minerais e sintéticos para motores diesel de alto desempenho.",
+    imageUrl: "/img/peca-lubrificante.png"
   },
   {
     id: 6,
-    name: "Bicos Injetores Common Rail",
-    category: "Injeção",
-    description: "Precisão na injeção eletrônica para economia de combustível e menos fumaça.",
-    imageUrl: "https://images.unsplash.com/photo-1574627885012-628d05241e2a?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: 7,
-    name: "Filtro Separador de Água",
-    category: "Filtros",
-    description: "Essencial para proteger o sistema de injeção contra contaminação por água no diesel.",
-    imageUrl: "https://images.unsplash.com/photo-1519002206772-52054c728367?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: 8,
-    name: "Pastilha de Freio Heavy Duty",
-    category: "Freios",
-    description: "Material de atrito de alta resistência para frenagens bruscas e cargas pesadas.",
-    imageUrl: IMAGENS.CAT_OLEO
-  },
-  {
-    id: 9,
-    name: "Alternador 24v Profissional",
+    name: "Kit Correias e Tensores",
     category: "Motores",
-    description: "Geração de energia estável para todos os componentes elétricos do caminhão.",
-    imageUrl: IMAGENS.CAT_MECANICO
-  },
-  {
-    id: 10,
-    name: "Fluido de Freio DOT 5.1",
-    category: "Óleos",
-    description: "Alta performance para sistemas de freio hidráulico sob altas temperaturas.",
-    imageUrl: IMAGENS.CAT_TECNOLOGIA
-  },
-  {
-    id: 11,
-    name: "Bomba D'água Diesel",
-    category: "Motores",
-    description: "Circulação eficiente do líquido de arrefecimento para evitar superaquecimento.",
-    imageUrl: IMAGENS.PECA_TURBO
-  },
-  {
-    id: 12,
-    name: "Cruzeta do Cardan",
-    category: "Transmissão",
-    description: "Transmissão de torque suave e sem vibrações para o eixo traseiro.",
-    imageUrl: IMAGENS.PECA_FILTRO
+    description: "Conjunto de correias dentadas e tensores de alta resistência para sincronismo perfeito do motor.",
+    imageUrl: "/img/peca-correia.png"
   }
 ];
 
-// Substituiu Serviços por Destaques de Linhas de Produtos/Categorias
 export const LINHAS_PRODUTOS: CategoryHighlight[] = [
   {
     id: 1,
     title: "Motor & Performance",
     description: "Turbinas, kits de motor, bombas d'água e componentes internos para máxima potência.",
-    icon: "Settings", // Engrenagem
+    icon: "Settings",
     imageUrl: IMAGENS.CAT_MECANICO
   },
   {
     id: 2,
     title: "Lubrificantes & Filtros",
     description: "Linha completa de óleos minerais, sintéticos e filtros para proteção total do motor.",
-    icon: "Droplet", // Óleo
+    icon: "Droplet",
     imageUrl: IMAGENS.CAT_OLEO
   },
   {
     id: 3,
     title: "Injeção Eletrônica",
     description: "Bicos injetores, módulos e sensores de alta precisão para sistemas Common Rail.",
-    icon: "Laptop", // Tecnologia
+    icon: "Laptop",
     imageUrl: IMAGENS.CAT_TECNOLOGIA
   },
   {
     id: 4,
     title: "Câmbio & Diferencial",
     description: "Embreagens, cruzetas e peças de transmissão robustas para suportar carga pesada.",
-    icon: "Wrench", // Ferramenta
+    icon: "Wrench",
     imageUrl: IMAGENS.CAT_CHASSI
   },
   {
     id: 5,
     title: "Peças para Frota",
     description: "Condições especiais para abastecimento de frotas de caminhões e ônibus.",
-    icon: "Truck", // Caminhão
+    icon: "Truck",
     imageUrl: IMAGENS.CAT_FROTA
   },
   {
     id: 6,
     title: "Acessórios e Acabamento",
     description: "Itens de acabamento e acessórios para manter seu veículo sempre novo.",
-    icon: "ShieldCheck", // Qualidade
+    icon: "ShieldCheck",
     imageUrl: IMAGENS.CAT_PRATELEIRAS
   }
 ];
@@ -192,7 +152,7 @@ export const DEPOIMENTOS: Testimonial[] = [
     role: "Transportadora Litoral",
     text: "Preço justo e peças originais. A turbina que comprei está perfeita. Recomendo.",
     rating: 5,
-    imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop"
+    imageUrl: IMAGENS.AVATAR_4
   },
   {
     id: 5,
@@ -200,6 +160,6 @@ export const DEPOIMENTOS: Testimonial[] = [
     role: "Empresária",
     text: "Facilidade de comprar pelo WhatsApp e retirar na loja. Agilidade que eu precisava.",
     rating: 5,
-    imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+    imageUrl: IMAGENS.AVATAR_5
   }
 ];

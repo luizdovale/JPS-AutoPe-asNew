@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { NUMERO_TELEFONE, ENDERECO, MAPA_GOOGLE_EMBED } from '../constants';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,21 +26,28 @@ const Contact: React.FC = () => {
 
   return (
     <Layout>
+      <SEO 
+        title="Contato" 
+        description="Fale com a JPS Auto Peças. Solicite orçamentos, consulte estoque e tire suas dúvidas sobre peças diesel em Caraguatatuba via WhatsApp ou telefone."
+      />
+
       <div className="bg-jps-main text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-anton text-4xl md:text-5xl mb-4">Fale Conosco</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">Estamos prontos para atender você. Entre em contato via WhatsApp, telefone ou visite nossa loja.</p>
+          <h1 className="font-anton text-4xl md:text-5xl mb-4 uppercase">Fale Conosco</h1>
+          <p className="text-gray-300 max-w-2xl mx-auto">Estamos prontos para atender você. Entre em contato via WhatsApp, telefone ou visite nossa unidade física.</p>
         </div>
       </div>
 
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl shadow-xl overflow-hidden">
             
-            {/* Lado do Formulário */}
+            {/* Form Side */}
             <div className="p-8 md:p-12">
-              <h2 className="font-anton text-3xl text-jps-black mb-2">Envie uma mensagem</h2>
-              <p className="text-gray-500 mb-8">Responderemos o mais breve possível via WhatsApp.</p>
+              <header>
+                <h2 className="font-anton text-3xl text-jps-black mb-2 uppercase">Envie sua mensagem</h2>
+                <p className="text-gray-500 mb-8">Responderemos o mais breve possível via WhatsApp.</p>
+              </header>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -52,7 +60,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-jps-main focus:ring-1 focus:ring-jps-main transition-colors"
-                    placeholder="Seu nome"
+                    placeholder="Ex: João da Silva"
                   />
                 </div>
                 <div>
@@ -65,11 +73,11 @@ const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-jps-main focus:ring-1 focus:ring-jps-main transition-colors"
-                    placeholder="(00) 00000-0000"
+                    placeholder="(12) 99999-9999"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">Mensagem</label>
+                  <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">Como podemos ajudar?</label>
                   <textarea 
                     id="message"
                     name="message"
@@ -78,7 +86,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-jps-main focus:ring-1 focus:ring-jps-main transition-colors resize-none"
-                    placeholder="Como podemos ajudar?"
+                    placeholder="Descreva a peça ou serviço que você precisa..."
                   ></textarea>
                 </div>
                 <button 
@@ -86,19 +94,19 @@ const Contact: React.FC = () => {
                   className="w-full bg-jps-whatsapp hover:bg-green-600 text-white font-bold py-4 rounded-lg shadow-lg flex items-center justify-center gap-2 transition-all hover:-translate-y-1"
                 >
                   <Send size={20} />
-                  Enviar para WhatsApp
+                  Enviar Orçamento via WhatsApp
                 </button>
               </form>
             </div>
 
-            {/* Lado das Informações */}
+            {/* Info Side */}
             <div className="bg-jps-main text-white p-8 md:p-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-jps-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               
-              <h3 className="font-anton text-2xl mb-8 tracking-wide">Informações de Contato</h3>
+              <h3 className="font-anton text-2xl mb-8 tracking-wide uppercase">Informações de Contato</h3>
               
-              <ul className="space-y-8 relative z-10">
-                <li className="flex items-start gap-4">
+              <address className="not-italic space-y-8 relative z-10">
+                <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-lg">
                     <MapPin className="text-jps-gold" size={24} />
                   </div>
@@ -106,18 +114,18 @@ const Contact: React.FC = () => {
                     <p className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-1">Endereço</p>
                     <p className="text-lg leading-relaxed">{ENDERECO}</p>
                   </div>
-                </li>
-                <li className="flex items-start gap-4">
+                </div>
+                <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-lg">
                     <Phone className="text-jps-gold" size={24} />
                   </div>
                   <div>
                     <p className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-1">Telefone</p>
                     <p className="text-lg">(12) 97404-5244</p>
-                    <p className="text-sm text-gray-400">Atendimento WhatsApp</p>
+                    <p className="text-sm text-gray-400">Atendimento comercial rápido</p>
                   </div>
-                </li>
-                <li className="flex items-start gap-4">
+                </div>
+                <div className="flex items-start gap-4">
                   <div className="bg-white/10 p-3 rounded-lg">
                     <Mail className="text-jps-gold" size={24} />
                   </div>
@@ -125,11 +133,11 @@ const Contact: React.FC = () => {
                     <p className="font-bold text-sm text-gray-400 uppercase tracking-wider mb-1">Email</p>
                     <p className="text-lg">contato@jpsautopecas.com.br</p>
                   </div>
-                </li>
-              </ul>
+                </div>
+              </address>
 
-              <div className="mt-12 pt-12 border-t border-white/10">
-                 <h4 className="font-anton text-xl mb-4">Horário de Funcionamento</h4>
+              <section className="mt-12 pt-12 border-t border-white/10">
+                 <h4 className="font-anton text-xl mb-4 uppercase">Horário de Funcionamento</h4>
                  <div className="flex justify-between text-sm text-gray-300">
                    <span>Segunda a Sexta</span>
                    <span>7:30 - 18:00</span>
@@ -142,12 +150,12 @@ const Contact: React.FC = () => {
                    <span>Domingo</span>
                    <span>Fechado</span>
                  </div>
-              </div>
+              </section>
             </div>
           </div>
           
-          {/* Mapa */}
-          <div className="mt-12 bg-white p-2 rounded-xl shadow-lg h-[400px]">
+          {/* Map Section */}
+          <section className="mt-12 bg-white p-2 rounded-xl shadow-lg h-[450px]">
              <iframe 
                src={MAPA_GOOGLE_EMBED} 
                width="100%" 
@@ -156,9 +164,9 @@ const Contact: React.FC = () => {
                allowFullScreen 
                loading="lazy" 
                referrerPolicy="no-referrer-when-downgrade"
-               title="Mapa da JPS Auto Peças"
+               title="Mapa de localização JPS Auto Peças"
              ></iframe>
-          </div>
+          </section>
 
         </div>
       </section>
