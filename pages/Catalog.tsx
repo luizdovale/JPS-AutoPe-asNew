@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import ProductCard from '../components/ProductCard';
 import SEO from '../components/SEO';
 import { PRODUTOS } from '../constants';
-import { Search, Sparkles } from 'lucide-react';
+import { Search, Sparkles, Package } from 'lucide-react';
 
 const Catalog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // No modo demonstração, filtramos apenas pelo termo de busca nos 6 itens fixos
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   const filteredProducts = PRODUTOS.filter(product => {
     return product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
            product.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -21,84 +33,94 @@ const Catalog: React.FC = () => {
         description="Confira nossos principais itens em destaque: filtros, embreagens, injeção, mangueiras e muito mais com a qualidade JPS."
       />
       
-      {/* Header do Catálogo */}
-      <div className="bg-jps-main text-white py-16 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-jps-gold rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-jps-light rounded-full blur-3xl"></div>
+      <div className="bg-jps-main text-white py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-jps-gold rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-10 right-10 w-64 h-64 bg-jps-light rounded-full blur-[120px]"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <span className="inline-flex items-center gap-2 bg-jps-gold/20 text-jps-gold px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+          <span className="inline-flex items-center gap-3 bg-jps-gold/20 text-jps-gold px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-6 animate-fade-in-up">
             <Sparkles size={14} /> Principais Destaques
           </span>
-          <h1 className="font-anton text-4xl md:text-5xl mb-4 uppercase tracking-tight">Catálogo de Demonstração</h1>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Confira nossa seleção de itens em destaque e encontre a peça ideal para o seu veículo com a confiança e qualidade JPS.
+          <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tighter animate-fade-in-up-delay-1">Linha Diesel Premium</h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed animate-fade-in-up-delay-2">
+            Explore nossa seleção criteriosamente curada de componentes diesel. Qualidade original para frotas que não podem parar.
           </p>
         </div>
       </div>
 
-      <section className="py-12 bg-jps-gray min-h-screen">
+      <section className="py-24 bg-jps-gray/30 min-h-screen overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Barra de Busca Simplificada */}
-          <div className="bg-white p-6 rounded-2xl shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between border border-gray-100">
+          {/* Barra de Busca Refinada */}
+          <div className="reveal bg-white p-2 rounded-[2.5rem] shadow-2xl shadow-jps-main/5 mb-20 flex flex-col md:flex-row gap-4 items-center justify-between border border-white max-w-4xl mx-auto transform -translate-y-1/2 relative z-20">
             <div className="relative w-full">
               <input 
                 type="text" 
-                placeholder="O que você está procurando hoje?" 
+                placeholder="Qual peça você procura?" 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-jps-main focus:ring-2 focus:ring-jps-main/10 transition-all text-jps-black text-lg"
+                className="w-full pl-16 pr-8 py-6 bg-transparent border-none rounded-[2rem] focus:outline-none focus:ring-0 transition-all text-jps-main text-xl font-medium placeholder:text-gray-300"
                 aria-label="Buscar peça"
               />
-              <Search className="absolute left-4 top-4.5 text-gray-400" size={24} />
+              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-jps-gold" size={28} />
             </div>
           </div>
 
-          {/* Grid de Produtos (6 itens) */}
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-8">
-               <div className="h-8 w-1.5 bg-jps-gold rounded-full"></div>
-               <h2 className="font-anton text-2xl text-jps-main uppercase">Itens Selecionados</h2>
+          <div className="mb-24">
+            <div className="reveal flex items-center justify-between mb-12">
+               <div className="flex items-center gap-4">
+                  <div className="h-10 w-2 bg-jps-gold rounded-full"></div>
+                  <h2 className="font-anton text-3xl md:text-4xl text-jps-main uppercase tracking-tight">Itens em Destaque</h2>
+               </div>
+               <div className="hidden md:flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase tracking-widest">
+                  <Package size={14} /> {filteredProducts.length} Peças encontradas
+               </div>
             </div>
 
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProducts.map(product => (
-                  <ProductCard key={product.id} product={product} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {filteredProducts.map((product, i) => (
+                  <div key={product.id} className="reveal" style={{ transitionDelay: `${i * 100}ms` }}>
+                    <ProductCard product={product} />
+                  </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20 bg-white rounded-2xl border border-dashed border-gray-300">
-                <p className="text-xl text-gray-500 font-bold italic">Nenhum item encontrado com esse nome.</p>
+              <div className="reveal text-center py-32 bg-white rounded-[3rem] shadow-2xl shadow-jps-main/5 border-2 border-dashed border-gray-100 max-w-3xl mx-auto">
+                <div className="w-20 h-20 bg-jps-gray rounded-3xl flex items-center justify-center mx-auto mb-6 text-gray-300">
+                   <Search size={40} />
+                </div>
+                <p className="text-2xl text-jps-main font-anton uppercase mb-4">Nenhum item encontrado</p>
+                <p className="text-gray-400 font-light mb-10 max-w-xs mx-auto">Tente outro termo ou fale agora com um especialista em injeção diesel.</p>
                 <button 
                   onClick={() => setSearchTerm('')} 
-                  className="mt-4 text-jps-main hover:underline font-bold flex items-center gap-2 mx-auto"
+                  className="bg-jps-main text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-jps-gold hover:text-jps-main transition-all shadow-lg"
                 >
-                  <Sparkles size={18} /> Mostrar todos os destaques
+                  Ver todos os itens
                 </button>
               </div>
             )}
           </div>
 
           {/* Call to Action Final */}
-          <div className="bg-jps-main rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-jps-gold/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="text-center md:text-left">
-                <h3 className="font-anton text-3xl mb-4 uppercase">Precisa de outra peça?</h3>
-                <p className="text-gray-300 max-w-lg text-lg">
-                  Temos mais de <span className="text-jps-gold font-bold">5.000 itens</span> em nosso estoque físico esperando por você.
+          <div className="reveal bg-jps-main rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl shadow-jps-main/20">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-jps-gold/5 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3"></div>
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="text-center lg:text-left">
+                <h3 className="font-anton text-4xl md:text-5xl mb-6 uppercase tracking-tight leading-none leading-tight">Não encontrou o que precisava?</h3>
+                <p className="text-gray-400 max-w-lg text-xl font-light">
+                  Nosso estoque físico conta com mais de <span className="text-jps-gold font-black">5.000 itens</span> para pronta entrega.
                 </p>
               </div>
               <a 
                 href="https://wa.me/5512974045244" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-jps-whatsapp text-white font-black py-5 px-10 rounded-2xl hover:bg-green-600 transition-all shadow-xl hover:shadow-green-500/20 transform hover:-translate-y-1 text-center whitespace-nowrap text-lg flex items-center gap-3"
+                className="bg-jps-gold text-jps-main font-black py-6 px-12 rounded-[2rem] hover:bg-white transition-all shadow-xl shadow-jps-gold/10 transform hover:-translate-y-1 text-center whitespace-nowrap text-lg uppercase tracking-widest flex items-center justify-center gap-4"
               >
-                Falar com Especialista Agora
+                Falar com Consultor
+                <Sparkles size={24} />
               </a>
             </div>
           </div>
@@ -109,4 +131,4 @@ const Catalog: React.FC = () => {
   );
 };
 
-export default Catalog;
+export default Catalog;

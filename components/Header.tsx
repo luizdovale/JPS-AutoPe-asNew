@@ -37,30 +37,30 @@ const Header: React.FC<HeaderProps> = ({ isScrolled, isMenuOpen, toggleMenu }) =
       </div>
 
       {/* Main Navigation */}
-      <header className={`sticky top-0 z-40 bg-white transition-all duration-300 ${isScrolled ? 'shadow-md py-3' : 'shadow-sm py-5'}`}>
+      <header className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-xl py-3' : 'bg-white py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <Link to="/" className="block group">
               <img 
                 src={IMAGENS.LOGO} 
                 alt="JPS Auto Peças Logo" 
-                className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                className={`w-auto object-contain transition-all duration-500 group-hover:scale-105 ${isScrolled ? 'h-12' : 'h-16'}`} 
                 width="160"
                 height="64"
               />
             </Link>
-
+ 
             <nav className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-bold uppercase tracking-wide transition-colors duration-200 hover:text-jps-light relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-jps-gold after:left-0 after:-bottom-1 after:transition-all after:duration-300 hover:after:w-full ${location.pathname === link.path ? 'text-jps-main after:w-full' : 'text-gray-600'}`}
+                  className={`nav-link ${location.pathname === link.path ? 'active text-jps-main' : ''}`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contato" className="bg-jps-gold hover:bg-yellow-500 text-jps-main font-bold py-2 px-6 rounded shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-0">
+              <Link to="/contato" className="bg-jps-gold hover:bg-white border-2 border-jps-gold text-jps-main font-black py-2.5 px-8 rounded-lg shadow-lg hover:shadow-jps-gold/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
                 Orçamento
               </Link>
             </nav>

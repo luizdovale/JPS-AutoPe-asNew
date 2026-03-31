@@ -13,12 +13,12 @@ export const IMAGENS = {
   PECA_FILTRO: "/img/peca-filtro.png",
   PECA_TURBO: "/img/peca-turbo.png",
   PECA_FREIO: "/img/peca-freio.png",
-  // Avatares mantidos com URLs sugeridas (Unsplash)
-  AVATAR_1: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop",
-  AVATAR_2: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop",
-  AVATAR_3: "https://images.pexels.com/photos/15401428/pexels-photo-15401428.jpeg",
-  AVATAR_4: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
-  AVATAR_5: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+  // Avatares locais da pasta public/img/testimonial
+  AVATAR_1: "/img/testimonial/testimonial1.png",
+  AVATAR_2: "/img/testimonial/testimonial2.png",
+  AVATAR_3: "/img/testimonial/testimonial3.png",
+  AVATAR_4: "/img/testimonial/testimonial4.png",
+  AVATAR_5: "/img/testimonial/testimonial5.png",
 };
 
 export const NUMERO_TELEFONE = "5512974045244";
@@ -118,47 +118,55 @@ export const LINHAS_PRODUTOS: CategoryHighlight[] = [
     description: "Itens de acabamento e acessórios para manter seu veículo sempre novo.",
     icon: "ShieldCheck",
     imageUrl: IMAGENS.CAT_PRATELEIRAS
+  },
+  {
+    id: 7,
+    title: "Mangueiras de Alta Pressão",
+    description: "Fabricação própria de mangueiras hidráulicas e de ar com terminais prensados na hora. Soluções sob medida para sua necessidade.",
+    icon: "Wrench",
+    imageUrl: "/img/peca-mangueira.png"
   }
 ];
+
 
 export const DEPOIMENTOS: Testimonial[] = [
   {
     id: 1,
-    name: "Carlos Mendes",
+    name: "Carlos 'Magrão' Silva",
     role: "Caminhoneiro Autônomo",
-    text: "Sempre encontro a peça que preciso. O estoque deles é impressionante e o preço é o melhor da região.",
+    text: "O Sérgio é diferenciado! Liguei precisando de um kit de embreagem pra ontem e ele resolveu na hora. Preço justo e peça de primeira linha.",
     rating: 5,
     imageUrl: IMAGENS.AVATAR_1
   },
   {
     id: 2,
-    name: "Roberto Silva",
-    role: "Gerente de Frota",
-    text: "Compro todas as peças da frota na JPS. Entrega rápida e peças originais garantidas.",
+    name: "Ricardo Oliveira",
+    role: "Gestor de Frota - TransLitoral",
+    text: "Trabalho com o Ivan há anos. A consultoria técnica que ele dá nas peças de injeção evita muita dor de cabeça. Confiança total na JPS.",
     rating: 5,
     imageUrl: IMAGENS.AVATAR_2
   },
   {
     id: 3,
-    name: "Mariana Costa",
-    role: "Proprietária de Van Escolar",
-    text: "Fui muito bem atendida. Os vendedores entendem muito de diesel e me indicaram o óleo certo.",
-    rating: 4.5,
+    name: "Mestre Valdir",
+    role: "Mecânico Diesel Expert",
+    text: "As mangueiras de alta pressão que eles fazem na hora são as melhores de Caragua. O time da JPS entende do que fala, sem enrolação.",
+    rating: 5,
     imageUrl: IMAGENS.AVATAR_3
   },
   {
     id: 4,
-    name: "André Souza",
-    role: "Transportadora Litoral",
-    text: "Preço justo e peças originais. A turbina que comprei está perfeita. Recomendo.",
+    name: "André Santos",
+    role: "Transportadora Vale",
+    text: "Parceria forte. O Sérgio sempre consegue as peças mais difíceis pra gente. Agilidade que quem trabalha com carga pesada precisa.",
     rating: 5,
     imageUrl: IMAGENS.AVATAR_4
   },
   {
     id: 5,
-    name: "Fernanda Lima",
-    role: "Empresária",
-    text: "Facilidade de comprar pelo WhatsApp e retirar na loja. Agilidade que eu precisava.",
+    name: "Tiago Ferreira",
+    role: "Caminhoneiro Frigorífico",
+    text: "Fui por indicação e não me arrependi. O Ivan me explicou a diferença dos lubrificantes e me ajudou a economizar. Atendimento nota 10.",
     rating: 5,
     imageUrl: IMAGENS.AVATAR_5
   }
