@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">
           <p>&copy; {new Date().getFullYear()} JPS Auto Peças &bull; Peças Diesel de Alta Performance</p>
           <div className="mt-4 md:mt-0 opacity-40 hover:opacity-100 transition-opacity flex items-center gap-2">
-            DESIGN & DEV BY <span className="text-white">valetechsoluções</span>
+            DESIGN & DEV BY <span className="text-white lowercase">valetechsoluções</span>
           </div>
         </div>
 
