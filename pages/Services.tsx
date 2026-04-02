@@ -38,7 +38,7 @@ const Services: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tight animate-fade-in-up">Peças & Soluções Diesel</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
+          <p className="text-white max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
             Componentes diesel de alta qualidade com suporte técnico especializado para máxima performance.
           </p>
         </div>

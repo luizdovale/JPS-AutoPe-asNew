@@ -37,7 +37,7 @@ const About: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tighter animate-fade-in-up">Nossa Trajetória</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1 underline decoration-jps-gold/30 underline-offset-8">
+          <p className="text-gray-200 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
             Referência em distribuição de peças no Litoral Norte há mais de 25 anos.
           </p>
         </div>

@@ -22,17 +22,17 @@ const Catalog: React.FC = () => {
   }, []);
 
   const filteredProducts = PRODUTOS.filter(product => {
-    return product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-           product.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
   return (
     <Layout>
-      <SEO 
-        title="Catálogo Demonstrativo" 
+      <SEO
+        title="Catálogo Demonstrativo"
         description="Confira nossos principais itens em destaque: filtros, embreagens, injeção, mangueiras e muito mais com a qualidade JPS."
       />
-      
+
       <div className="bg-jps-main text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-jps-gold rounded-full blur-[120px]"></div>
@@ -43,7 +43,7 @@ const Catalog: React.FC = () => {
             <Sparkles size={14} /> Principais Destaques
           </span>
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tighter animate-fade-in-up-delay-1">Linha Diesel Premium</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed animate-fade-in-up-delay-2">
+          <p className="text-gray-200 max-w-2xl mx-auto text-lg font-light leading-relaxed animate-fade-in-up-delay-2">
             Explore nossa seleção criteriosamente curada de componentes diesel. Qualidade original para frotas que não podem parar.
           </p>
         </div>
@@ -51,13 +51,13 @@ const Catalog: React.FC = () => {
 
       <section className="py-24 bg-jps-gray/30 min-h-screen overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Barra de Busca Refinada */}
           <div className="reveal bg-white p-2 rounded-[2.5rem] shadow-2xl shadow-jps-main/5 mb-20 flex flex-col md:flex-row gap-4 items-center justify-between border border-white max-w-4xl mx-auto transform -translate-y-1/2 relative z-20">
             <div className="relative w-full">
-              <input 
-                type="text" 
-                placeholder="Qual peça você procura?" 
+              <input
+                type="text"
+                placeholder="Qual peça você procura?"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-16 pr-8 py-6 bg-transparent border-none rounded-[2rem] focus:outline-none focus:ring-0 transition-all text-jps-main text-xl font-medium placeholder:text-gray-300"
@@ -69,13 +69,13 @@ const Catalog: React.FC = () => {
 
           <div className="mb-24">
             <div className="reveal flex items-center justify-between mb-12">
-               <div className="flex items-center gap-4">
-                  <div className="h-10 w-2 bg-jps-gold rounded-full"></div>
-                  <h2 className="font-anton text-3xl md:text-4xl text-jps-main uppercase tracking-tight">Itens em Destaque</h2>
-               </div>
-               <div className="hidden md:flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase tracking-widest">
-                  <Package size={14} /> {filteredProducts.length} Peças encontradas
-               </div>
+              <div className="flex items-center gap-4">
+                <div className="h-10 w-2 bg-jps-gold rounded-full"></div>
+                <h2 className="font-anton text-3xl md:text-4xl text-jps-main uppercase tracking-tight">Itens em Destaque</h2>
+              </div>
+              <div className="hidden md:flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase tracking-widest">
+                <Package size={14} /> {filteredProducts.length} Peças encontradas
+              </div>
             </div>
 
             {filteredProducts.length > 0 ? (
@@ -89,12 +89,12 @@ const Catalog: React.FC = () => {
             ) : (
               <div className="reveal text-center py-32 bg-white rounded-[3rem] shadow-2xl shadow-jps-main/5 border-2 border-dashed border-gray-100 max-w-3xl mx-auto">
                 <div className="w-20 h-20 bg-jps-gray rounded-3xl flex items-center justify-center mx-auto mb-6 text-gray-300">
-                   <Search size={40} />
+                  <Search size={40} />
                 </div>
                 <p className="text-2xl text-jps-main font-anton uppercase mb-4">Nenhum item encontrado</p>
                 <p className="text-gray-400 font-light mb-10 max-w-xs mx-auto">Tente outro termo ou fale agora com um especialista em injeção diesel.</p>
-                <button 
-                  onClick={() => setSearchTerm('')} 
+                <button
+                  onClick={() => setSearchTerm('')}
                   className="bg-jps-main text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-jps-gold hover:text-jps-main transition-all shadow-lg"
                 >
                   Ver todos os itens
@@ -113,9 +113,9 @@ const Catalog: React.FC = () => {
                   Nosso estoque físico conta com mais de <span className="text-jps-gold font-black">5.000 itens</span> para pronta entrega.
                 </p>
               </div>
-              <a 
-                href="https://wa.me/5512974045244" 
-                target="_blank" 
+              <a
+                href="https://wa.me/5512974045244"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="bg-jps-gold text-jps-main font-black py-6 px-12 rounded-[2rem] hover:bg-white transition-all shadow-xl shadow-jps-gold/10 transform hover:-translate-y-1 text-center whitespace-nowrap text-lg uppercase tracking-widest flex items-center justify-center gap-4"
               >
@@ -131,4 +131,4 @@ const Catalog: React.FC = () => {
   );
 };
 
-export default Catalog;
+export default Catalog;
