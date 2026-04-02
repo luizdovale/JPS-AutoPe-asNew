@@ -53,29 +53,29 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="Home" 
+      <SEO
+        title="Home"
         description="A JPS Auto Peças é especialista em linha diesel com mais de 25 anos de experiência. Localizada em Caraguatatuba, oferecemos o melhor estoque de peças pesadas da região."
       />
-      
+
       {/* Hero Section */}
       <section className="relative h-[700px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={IMAGENS.FUNDO_HERO} 
-            alt="Caminhão em manutenção - JPS Auto Peças" 
+          <img
+            src={IMAGENS.FUNDO_HERO}
+            alt="Caminhão em manutenção - JPS Auto Peças"
             className="w-full h-full object-cover ken-burns"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-jps-main via-jps-main/60 to-transparent mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl text-white">
             <div className="animate-fade-in-up inline-flex items-center gap-2 bg-jps-gold text-jps-main font-black px-4 py-1.5 text-sm rounded shadow-lg mb-8 uppercase tracking-wider">
               <Star size={14} fill="currentColor" /> Desde 1992
             </div>
-            <h1 className="animate-fade-in-up-delay-1 text-5xl md:text-8xl font-anton uppercase tracking-tight leading-[0.9] mb-6 drop-shadow-2xl">
+            <h1 className="animate-fade-in-up-delay-1 text-5xl md:text-8xl font-anton uppercase tracking-tight leading-[1.1] mb-6 drop-shadow-2xl">
               Peças de <span className="text-jps-gold">Alta Performance</span> Para Linha Diesel
             </h1>
             <p className="animate-fade-in-up-delay-2 text-xl text-gray-100 mb-10 font-light border-l-4 border-jps-gold pl-6 max-w-2xl leading-relaxed">
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
       {/* Institutional Highlights */}
       <section className="py-24 bg-white relative z-20 reveal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="font-anton text-4xl md:text-5xl text-jps-black mb-4 uppercase">Por que escolher a JPS?</h2>
             <p className="text-gray-500 text-lg">Tradição, estoque completo e o melhor custo-benefício para sua frota diesel.</p>
           </div>
@@ -140,14 +140,14 @@ const Home: React.FC = () => {
               Explorar todo o estoque <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </header>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {LINHAS_PRODUTOS.slice(0, 3).map((line) => (
               <Link to="/catalogo" key={line.id} className="group relative rounded-3xl overflow-hidden h-[450px] shadow-2xl cursor-pointer">
-                <img 
-                  src={line.imageUrl} 
-                  alt={`Categoria: ${line.title}`} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                <img
+                  src={line.imageUrl}
+                  alt={`Categoria: ${line.title}`}
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-jps-black/95 via-jps-black/30 to-transparent"></div>
@@ -196,9 +196,9 @@ const Home: React.FC = () => {
       <section className="py-0 bg-white reveal">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative h-[600px] lg:h-auto overflow-hidden group">
-            <img 
-              src={IMAGENS.SOBRE_EQUIPE} 
-              alt="Equipe técnica JPS Auto Peças" 
+            <img
+              src={IMAGENS.SOBRE_EQUIPE}
+              alt="Equipe técnica JPS Auto Peças"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               loading="lazy"
             />
@@ -207,20 +207,20 @@ const Home: React.FC = () => {
           <article className="bg-jps-gray p-12 lg:p-24 flex flex-col justify-center">
             <span className="text-jps-light font-bold tracking-[0.2em] text-sm uppercase mb-6">Nossa História</span>
             <h2 className="font-anton text-5xl md:text-6xl mb-8 leading-[1.1] text-jps-main uppercase">
-              Tradição que <br/><span className="text-jps-gold">Move Cargas</span>
+              Tradição que <br /><span className="text-jps-gold">Move Cargas</span>
             </h2>
             <p className="text-gray-600 mb-10 text-xl leading-relaxed font-light">
               Nossa história começou há mais de duas décadas em Caraguatatuba. Hoje, somos a maior referência regional em peças diesel, unindo tecnologia de ponta com o atendimento que você já conhece.
             </p>
             <div className="grid grid-cols-2 gap-10 mb-12">
-                <div>
-                   <h4 className="font-anton text-5xl text-jps-black mb-1">25+</h4>
-                   <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Anos de Mercado</p>
-                </div>
-                <div>
-                   <h4 className="font-anton text-5xl text-jps-black mb-1">5k+</h4>
-                   <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Peças em Estoque</p>
-                </div>
+              <div>
+                <h4 className="font-anton text-5xl text-jps-black mb-1">25+</h4>
+                <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Anos de Mercado</p>
+              </div>
+              <div>
+                <h4 className="font-anton text-5xl text-jps-black mb-1">5k+</h4>
+                <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">Peças em Estoque</p>
+              </div>
             </div>
             <Link to="/sobre" className="text-jps-main font-bold border-b-2 border-jps-main pb-2 w-fit hover:text-jps-light hover:border-jps-light transition-all text-lg group">
               Conheça Nossa Trajetória <span className="inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
@@ -234,18 +234,18 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="flex justify-between items-end mb-20">
             <div>
-               <span className="text-jps-light font-bold tracking-[0.2em] text-sm uppercase">Depoimentos</span>
-               <h2 className="font-anton text-4xl md:text-5xl text-jps-black mt-2 uppercase">Voz do Cliente</h2>
+              <span className="text-jps-light font-bold tracking-[0.2em] text-sm uppercase">Depoimentos</span>
+              <h2 className="font-anton text-4xl md:text-5xl text-jps-black mt-2 uppercase">Voz do Cliente</h2>
             </div>
             <div className="flex gap-4">
-              <button 
+              <button
                 onClick={() => scroll('left')}
                 className="w-14 h-14 rounded-full border border-gray-100 flex items-center justify-center hover:bg-jps-main hover:text-white hover:border-jps-main transition-all shadow-sm"
                 aria-label="Avaliação anterior"
               >
                 <ChevronLeft size={28} />
               </button>
-              <button 
+              <button
                 onClick={() => scroll('right')}
                 className="w-14 h-14 rounded-full border border-gray-100 flex items-center justify-center hover:bg-jps-main hover:text-white hover:border-jps-main transition-all shadow-sm"
                 aria-label="Próxima avaliação"
@@ -256,18 +256,18 @@ const Home: React.FC = () => {
           </header>
 
           <div className="relative group">
-            <div 
+            <div
               ref={scrollContainerRef}
               className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-12 no-scrollbar scroll-smooth px-4 -mx-4"
             >
               {DEPOIMENTOS.map(testimonial => (
-                <div 
-                  key={testimonial.id} 
+                <div
+                  key={testimonial.id}
                   className="flex-none w-[85vw] md:w-[480px] snap-center bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/20 flex flex-col h-[420px] md:h-[450px] relative overflow-hidden group/card hover:border-jps-gold/30 transition-all duration-500"
                 >
                   {/* Decorative background element */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-jps-gold/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover/card:bg-jps-gold/10 transition-colors duration-500"></div>
-                  
+
                   <div className="relative z-10 flex flex-col h-full">
                     <div className="mb-8 flex justify-between items-start">
                       <div className="w-12 h-12 bg-jps-gray rounded-2xl flex items-center justify-center text-jps-gold">
@@ -275,7 +275,7 @@ const Home: React.FC = () => {
                       </div>
                       <div className="flex gap-1 text-jps-gold">
                         {[...Array(5)].map((_, i) => (
-                           <Star key={i} size={16} fill="currentColor" />
+                          <Star key={i} size={16} fill="currentColor" />
                         ))}
                       </div>
                     </div>
@@ -286,14 +286,14 @@ const Home: React.FC = () => {
 
                     <footer className="flex items-center gap-4 mt-8 pt-8 border-t border-gray-100">
                       <div className="relative">
-                        <img 
-                          src={testimonial.imageUrl} 
-                          alt={`Foto de ${testimonial.name}`} 
-                          className="w-16 h-16 rounded-2xl object-cover grayscale group-hover/card:grayscale-0 transition-all duration-700 shadow-md" 
+                        <img
+                          src={testimonial.imageUrl}
+                          alt={`Foto de ${testimonial.name}`}
+                          className="w-16 h-16 rounded-2xl object-cover grayscale group-hover/card:grayscale-0 transition-all duration-700 shadow-md"
                           loading="lazy"
                         />
                         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-jps-gold rounded-lg flex items-center justify-center">
-                           <ShieldCheck size={12} className="text-jps-main" />
+                          <ShieldCheck size={12} className="text-jps-main" />
                         </div>
                       </div>
                       <div>
@@ -305,7 +305,7 @@ const Home: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Carousel fade effects for desktop */}
             <div className="hidden md:block absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-white to-transparent pointer-events-none -ml-4"></div>
             <div className="hidden md:block absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-white to-transparent pointer-events-none -mr-4"></div>
@@ -316,4 +316,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default Home;
