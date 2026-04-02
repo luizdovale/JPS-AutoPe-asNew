@@ -44,7 +44,7 @@ const Catalog: React.FC = () => {
           </span>
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tighter animate-fade-in-up-delay-1">Linha Diesel Premium</h1>
           <p className="text-gray-200 max-w-2xl mx-auto text-lg font-light leading-relaxed animate-fade-in-up-delay-2">
-            Explore nossa seleção criteriosamente curada de componentes diesel. Qualidade original para frotas que não podem parar.
+            As melhores peças diesel para garantir desempenho e continuidade da sua operação.
           </p>
         </div>
       </div>
