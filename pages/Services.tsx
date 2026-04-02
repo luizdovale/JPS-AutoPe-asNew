@@ -38,8 +38,8 @@ const Services: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tight animate-fade-in-up">Peças & Soluções Diesel</h1>
-          <p className="text-jps-gold/80 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
-            Consultoria técnica e o maior estoque de componentes para o motor do seu negócio.
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
+            Componentes diesel de alta qualidade com suporte técnico especializado para máxima performance.
           </p>
         </div>
       </div>
@@ -50,17 +50,17 @@ const Services: React.FC = () => {
             {LINHAS_PRODUTOS.map((service, index) => (
               <div key={service.id} className={`flex flex-col md:flex-row gap-16 lg:gap-24 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="w-full md:w-1/2 reveal">
-                   <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl">
-                     <div className="absolute inset-0 bg-jps-main/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-                     <img 
-                      src={service.imageUrl} 
-                      alt={service.title} 
+                  <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl">
+                    <div className="absolute inset-0 bg-jps-main/20 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+                    <img
+                      src={service.imageUrl}
+                      alt={service.title}
                       className="w-full h-[450px] object-cover transform group-hover:scale-105 transition-transform duration-1000"
                     />
                     <div className="absolute bottom-8 left-8 right-8 z-20 bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/20 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <p className="text-white text-xs font-black uppercase tracking-widest text-center">Tecnologia Diesel de Ponta</p>
                     </div>
-                   </div>
+                  </div>
                 </div>
                 <div className="w-full md:w-1/2 reveal">
                   <div className="flex items-center gap-4 mb-6">
@@ -71,7 +71,7 @@ const Services: React.FC = () => {
                   </div>
                   <h2 className="font-anton text-4xl md:text-5xl text-jps-black mb-8 uppercase leading-tight">{service.title}</h2>
                   <p className="text-gray-500 text-lg leading-relaxed mb-10 font-light">{service.description}</p>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                     {['Garantia Premium', 'Peças Originais', 'Execução Técnica', 'Agilidade'].map((item, i) => (
                       <div key={i} className="flex items-center gap-3 text-jps-main bg-white py-3 px-5 rounded-xl border border-gray-100 shadow-sm">
@@ -81,7 +81,7 @@ const Services: React.FC = () => {
                     ))}
                   </div>
 
-                  <a 
+                  <a
                     href={`https://wa.me/${NUMERO_TELEFONE}?text=${encodeURIComponent(`Olá, gostaria de agendar um serviço de ${service.title}.`)}`}
                     target="_blank"
                     className="inline-flex items-center gap-3 bg-jps-main text-white font-black py-5 px-10 rounded-2xl uppercase tracking-widest hover:bg-jps-gold hover:text-jps-main hover:shadow-xl transition-all shadow-lg active:scale-95"
@@ -99,4 +99,4 @@ const Services: React.FC = () => {
   );
 };
 
-export default Services;
+export default Services;

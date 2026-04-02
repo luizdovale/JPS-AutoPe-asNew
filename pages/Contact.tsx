@@ -39,18 +39,18 @@ const Contact: React.FC = () => {
 
   return (
     <Layout>
-      <SEO 
-        title="Contato" 
+      <SEO
+        title="Contato"
         description="Fale com a JPS Auto Peças. Solicite orçamentos, consulte estoque e tire suas dúvidas sobre peças diesel em Caraguatatuba via WhatsApp ou telefone."
       />
 
       <div className="bg-jps-main text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-           <div className="absolute inset-0 bg-gradient-to-b from-jps-main to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-jps-main to-transparent"></div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="font-anton text-5xl md:text-7xl mb-6 uppercase tracking-tight animate-fade-in-up">Canais de Atendimento</h1>
-          <p className="text-jps-gold/80 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
+          <p className="text-gray-200 max-w-2xl mx-auto text-lg font-light tracking-wide animate-fade-in-up-delay-1">
             Suporte técnico especializado para sua frota diesel.
           </p>
         </div>
@@ -59,14 +59,14 @@ const Contact: React.FC = () => {
       <section className="py-24 bg-jps-gray/30 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
+
             {/* Info Side */}
             <div className="lg:col-span-5 space-y-8 reveal">
               <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-jps-main/5 border border-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-jps-gold/5 rounded-full blur-3xl"></div>
-                
+
                 <h3 className="font-anton text-3xl text-jps-main mb-10 uppercase tracking-tight">Onde nos encontrar</h3>
-                
+
                 <div className="space-y-10">
                   <div className="flex items-start gap-6 group">
                     <div className="bg-jps-gray p-4 rounded-2xl text-jps-main group-hover:bg-jps-gold group-hover:text-white transition-all duration-500 shadow-sm">
@@ -125,13 +125,13 @@ const Contact: React.FC = () => {
                   <h2 className="font-anton text-4xl text-jps-black mb-4 uppercase leading-none">Solicite um Orçamento</h2>
                   <p className="text-gray-500 font-light text-lg">Preencha os campos abaixo e entraremos em contato imediatamente.</p>
                 </header>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-4">Seu Nome</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         id="name"
                         name="name"
                         required
@@ -142,22 +142,22 @@ const Contact: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="phone" className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-4">WhatsApp</label>
-                        <input 
-                          type="tel" 
-                          id="phone"
-                          name="phone"
-                          required
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-8 py-5 bg-jps-gray border-2 border-transparent rounded-[2rem] focus:outline-none focus:border-jps-gold focus:bg-white transition-all text-jps-main font-medium placeholder:text-gray-300"
-                          placeholder="(12) 99999-9999"
-                        />
+                      <label htmlFor="phone" className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-4">WhatsApp</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-8 py-5 bg-jps-gray border-2 border-transparent rounded-[2rem] focus:outline-none focus:border-jps-gold focus:bg-white transition-all text-jps-main font-medium placeholder:text-gray-300"
+                        placeholder="(12) 99999-9999"
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-[10px] font-black text-gray-400 uppercase tracking-widest ml-4">Peça ou Serviço de Interesse</label>
-                    <textarea 
+                    <textarea
                       id="message"
                       name="message"
                       required
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                       placeholder="Descreva aqui o que você precisa..."
                     ></textarea>
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     className="w-full bg-jps-main text-white font-black py-6 rounded-[2rem] shadow-xl flex items-center justify-center gap-4 transition-all hover:bg-jps-gold hover:text-jps-main hover:-translate-y-1 active:scale-95 text-lg uppercase tracking-[0.2em]"
                   >
@@ -179,24 +179,24 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Map Section */}
           <section className="mt-24 reveal">
-              <div className="bg-white p-4 rounded-[3rem] shadow-2xl border border-white h-[550px] relative">
-                 <div className="absolute top-8 left-8 z-20 bg-jps-main text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">
-                   Visite nossa unidade física
-                 </div>
-                 <iframe 
-                   src={MAPA_GOOGLE_EMBED} 
-                   width="100%" 
-                   height="100%" 
-                   style={{ border: 0, borderRadius: '2.5rem' }} 
-                   allowFullScreen 
-                   loading="lazy" 
-                   referrerPolicy="no-referrer-when-downgrade"
-                   title="Mapa de localização JPS Auto Peças"
-                 ></iframe>
+            <div className="bg-white p-4 rounded-[3rem] shadow-2xl border border-white h-[550px] relative">
+              <div className="absolute top-8 left-8 z-20 bg-jps-main text-white px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest shadow-xl">
+                Visite nossa unidade física
               </div>
+              <iframe
+                src={MAPA_GOOGLE_EMBED}
+                width="100%"
+                height="100%"
+                style={{ border: 0, borderRadius: '2.5rem' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa de localização JPS Auto Peças"
+              ></iframe>
+            </div>
           </section>
 
         </div>
@@ -205,4 +205,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default Contact;
