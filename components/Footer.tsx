@@ -7,15 +7,15 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-jps-main text-white pt-24 pb-12 border-t-8 border-jps-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-20">
           {/* Brand Col */}
           <div className="lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left">
             <Link to="/" className="mb-8 inline-block">
-              <img 
-                src={IMAGENS.LOGO} 
-                alt="JPS Auto Peças Logo Footer" 
-                className="h-20 w-auto object-contain brightness-0 invert opacity-100" 
+              <img
+                src={IMAGENS.LOGO}
+                alt="JPS Auto Peças Logo Footer"
+                className="h-20 w-auto object-contain brightness-0 invert opacity-100"
                 width="200"
                 height="80"
                 loading="lazy"
@@ -82,14 +82,14 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center lg:justify-start gap-4">
                 <Clock size={20} className="text-transparent flex-shrink-0" />
                 <div>
-                  <p className="text-red-500 uppercase text-[10px] font-black tracking-widest mb-1">Domingos:</p>
-                  <p className="text-base text-red-500 font-bold">Fechado</p>
+                  <p className="text-white uppercase text-[10px] font-black tracking-widest mb-1">Domingos:</p>
+                  <p className="text-base text-jps-gold font-bold">Fechado</p>
                 </div>
               </div>
             </div>
           </section>
         </div>
-        
+
         <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">
           <p>&copy; {new Date().getFullYear()} JPS Auto Peças &bull; Peças Diesel de Alta Performance</p>
           <div className="mt-4 md:mt-0 opacity-40 hover:opacity-100 transition-opacity flex items-center gap-2">
